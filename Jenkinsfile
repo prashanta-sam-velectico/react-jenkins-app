@@ -10,14 +10,21 @@ pipeline {
         }
         stage("Build") {
             steps {
-                sh "sudo npm install"
-                sh "sudo npm run build"
+                sh "sudo npm install"               
             }
         }
         stage("Deploy") {
             steps {              
-                sh "sudo cp -r ${WORKSPACE}/ /home/velectic/node_code/expy-jenkins/"
+                sh "sudo cp -r ${WORKSPACE}/ /home/velectic/node_code/expy-jenkins/"          
             }
+            
+        }
+        stage("Restart-services") {
+            steps {                             
+                sh "sudo systemctl restart expy-jenkins"
+                 sh "sudo systemctl status expy-jenkins"
+            }
+            
         }
     }
 }

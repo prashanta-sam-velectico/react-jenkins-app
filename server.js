@@ -4,10 +4,11 @@ var path = require('path');
 
 
 
-app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.static(path.resolve(__dirname, './build')));
 app.get('*', async function (req, res) { 
 
-const filePath = path.resolve(__dirname, './public', 'index.html');
+const filePath = path.resolve(__dirname, './build', 'index.html');
+console.log("here");
 res.sendFile(filePath);
 
 });
