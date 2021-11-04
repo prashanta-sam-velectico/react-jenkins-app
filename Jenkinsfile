@@ -4,19 +4,19 @@ pipeline {
           stage("start") {
             steps {
                echo "building started"
+               sh "sudo chown -R jenkins:jenkins /home/velectic/node_code/expy-jenkins"
+               sh "sudo rm -rf /home/velectic/node_code/expy-jenkins"
             }
         }
         stage("Build") {
             steps {
-                sh "npm install"
-                sh "npm run build"
+                sh "sudo npm install"
+                sh "sudo npm run build"
             }
         }
         stage("Deploy") {
-            steps {
-                sh "chown -R jenkins:jenkins /home/velectic/node_code/expy-jenkins"
-                sh "rm -rf /home/velectic/node_code/expy-jenkins"
-                sh "cp -r ${WORKSPACE}/build/ /home/velectic/node_code/expy-jenkins/"
+            steps {              
+                sh "sudo cp -r ${WORKSPACE}/build/ /home/velectic/node_code/expy-jenkins/"
             }
         }
     }
