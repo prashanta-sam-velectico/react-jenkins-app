@@ -16,7 +16,7 @@ pipeline {
         }
         stage("Deploy") {
             steps {              
-                sh "sudo cp -r ${WORKSPACE}/build/ /home/velectic/node_code/expy-jenkins/"
+                sh "sudo cp -r ${WORKSPACE}/ /home/velectic/node_code/expy-jenkins/"
             }
         }
     }
