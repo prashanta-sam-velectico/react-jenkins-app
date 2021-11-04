@@ -14,7 +14,7 @@ pipeline {
         }
         stage("Deploy") {
             steps {
-                sh "chown -R root:root /home/velectic/node_code/expy-jenkins"
+                sh "chown -R jenkins:jenkins /home/velectic/node_code/expy-jenkins"
                 sh "rm -rf /home/velectic/node_code/expy-jenkins"
                 sh "cp -r ${WORKSPACE}/build/ /home/velectic/node_code/expy-jenkins/"
             }
