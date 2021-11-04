@@ -2,12 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const queryString = require('query-string');
+  const parsed = queryString.parse(window.location.search);
+  console.log(parsed);
+//=> '?foo=bar'
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         I am done
+         new package added
         </p>
        
      
