@@ -2,6 +2,11 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
+
+app.set('views', __dirname + '/views')
+app.set('view engine', 'ejs');
+
+
 var mysql = require('mysql');
 var fs = require('fs');
 console.log("here");
@@ -36,7 +41,7 @@ app.get('/meet',async (req,res)=>{
   
     if(typeof BM_Content_Sent=='undefined')
     {
-        res.end('<center><h1>Invalid Meeting</h1></center>');
+        res.send('<center><h1>Invalid Meeting</h1></center>');
     }
   let sql="SELECT BM_Name FROM buyers_master WHERE BM_Content_Sent ='"+BM_Content_Sent+"' and Status='B'";
     console.log(" I am here " + BM_Content_Sent);
