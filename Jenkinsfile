@@ -23,7 +23,7 @@ pipeline {
         stage("Restart-services") {
             steps {                             
                 sh "sudo systemctl restart expy-jenkins"
-                 sh "sudo systemctl status expy-jenkins"
+                sh "sudo systemctl status expy-jenkins"
             }
             
         }

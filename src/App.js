@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         new package added
+         we are in {process.env.REACT_APP_API_URL}
         </p>
        
      
