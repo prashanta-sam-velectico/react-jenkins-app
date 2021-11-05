@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         we are in {process.env.REACT_APP_API_URL}
+        almost done {process.env.REACT_APP_API_URL}
         </p>
        
      
